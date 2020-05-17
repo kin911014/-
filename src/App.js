@@ -1,11 +1,11 @@
 import React from "react";
+import MyComponent from "./MyComponent";
 
 export default class App extends React.Component {
   render() {
-    const txt = "땅히";
     return (
       <div>
-        <h1>{txt}</h1>
+        <MyComponent />
       </div>
     );
   }
