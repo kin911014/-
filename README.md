@@ -75,3 +75,18 @@ export default class MyComponent extends React.Component {
   일반 function과 arrowfunction은 용도가 다르다 (ex/ 가리키는 this의 값이 다르다)
 
 1.  일반함수는 자신이 종속된 객체를 this로 표현, 화살표함수는 자신이 종속된 인스턴스를 가리킨다.
+
+## event handling
+
+- change event
+  <pre></pre>
+  <pre>
+    handleChange = (e) => {
+    console.log(e.target);
+    this.setState({
+    [e.target.name]: e.target.value,
+    });
+    };에서 [e.target.name]은 input의 name의 value에 e.target.value를 사용한다는 것!
+  </pre>
+
+- onKeyPress event handling
