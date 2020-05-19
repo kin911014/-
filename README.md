@@ -90,3 +90,22 @@ export default class MyComponent extends React.Component {
   </pre>
 
 - onKeyPress event handling
+
+## ref
+
+- reference의 줄임말
+- 아래에서 success와 failure 둘중하나 클래스name이 결정됨에 따라 css가 다르게 적용가능
+<pre>
+        <input
+         type="password"
+         value={this.state.password}
+         onChange={this.handleChange}
+         className={
+           this.state.clicked
+             ? this.state.validated
+               ? "success"
+               : "failure"
+             : ""
+         }
+       />
+  </pre>
