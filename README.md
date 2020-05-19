@@ -79,7 +79,7 @@ export default class MyComponent extends React.Component {
 ## event handling
 
 - change event
-  <pre></pre>
+
   <pre>
     handleChange = (e) => {
     console.log(e.target);
@@ -109,3 +109,35 @@ export default class MyComponent extends React.Component {
          }
        />
   </pre>
+
+- state만으로 해결못하는 경우는 ref사용할것
+
+1. 특정 input에 포커스주기
+
+- input에 ref를 설정해주고 함수에서 focus를 설정해주면 input에 포커스가 넘어간다.
+<pre>
+  handleButtonClick = () => {
+    this.setState({
+      clicked: true,
+      validated: this.state.password === "0000",
+    });
+    this.input.focus();
+  };
+
+render() {
+return (
+
+<div>
+<input
+ref={(ref) => (this.input = ref)} />
+}
+
+</pre>
+2. 스크롤 박스 조작
+  - 컴포넌트에 ref를 설정하는 것으로 주로 컴포넌트 내부에 있는 DOM을 외부에서 사용할 때 사용.
+  
+<pre>
+  <MyComponent ref={(ref)=>{this.MyComponent =ref}}>
+</pre>
+<pre></pre>
+3. canvas 요소에 그림그리기
